@@ -1,0 +1,149 @@
+[
+  {
+    "id": "p1",
+    "title": "Spacious 3-bed house with garden",
+    "type": "house",
+    "price": 425000,
+    "bedrooms": 3,
+    "date_added": "2025-11-10",
+    "postcode_area": "NW1",
+    "short_description": "Bright 3 bedroom family house near transport links.",
+    "long_description": "A well-presented 3 bedroom house with private garden, two bathrooms and parking.",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200",
+      "https://images.unsplash.com/photo-1560449753-43b30b7f6e5b?w=1200",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
+      "https://images.unsplash.com/photo-1600585154182-2f3b3d5a29b8?w=1200",
+      "https://images.unsplash.com/photo-1600585154076-3f0bb5c4f9ee?w=1200",
+      "https://images.unsplash.com/photo-1600585154079-4fbbbd45a6b6?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "NW1 4AB"
+  },
+  {
+    "id": "p2",
+    "title": "Modern 1-bed flat - city centre",
+    "type": "flat",
+    "price": 285000,
+    "bedrooms": 1,
+    "date_added": "2025-09-12",
+    "postcode_area": "BR1",
+    "short_description": "Contemporary 1 bedroom flat ideal for commuters.",
+    "long_description": "Open plan living, integrated kitchen, near local amenities.",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154178-7f2f6b3b7d11?w=1200",
+      "https://images.unsplash.com/photo-1600585154350-0c6f8f1c8f3b?w=1200",
+      "https://images.unsplash.com/photo-1600585154388-91d2f8c8ef6f?w=1200",
+      "https://images.unsplash.com/photo-1600585154381-6f316f8b3b8c?w=1200",
+      "https://images.unsplash.com/photo-1600585154293-4a7a9a8b8b9b?w=1200",
+      "https://images.unsplash.com/photo-1600585154130-8b8c8d8e9f9a?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "BR1 1ZZ"
+  },
+  {
+    "id": "p3",
+    "title": "Family 4-bed semi-detached",
+    "type": "house",
+    "price": 550000,
+    "bedrooms": 4,
+    "date_added": "2025-08-05",
+    "postcode_area": "NW1",
+    "short_description": "Large family home with extended kitchen.",
+    "long_description": "Four bedrooms, two bathrooms, a large garden and garage.",
+    "images": [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200",
+      "https://images.unsplash.com/photo-1570129477490-4f2a6beb6c2b?w=1200",
+      "https://images.unsplash.com/photo-1570129477491-ef3b5f2e8c7b?w=1200",
+      "https://images.unsplash.com/photo-1570129477493-1a2b3c4d5e6f?w=1200",
+      "https://images.unsplash.com/photo-1570129477494-7b8c9d0a1b2c?w=1200",
+      "https://images.unsplash.com/photo-1570129477495-3c2a1b0f9e8d?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "NW1 6CD"
+  },
+  {
+    "id": "p4",
+    "title": "Studio flat - perfect for students",
+    "type": "flat",
+    "price": 180000,
+    "bedrooms": 0,
+    "date_added": "2025-10-20",
+    "postcode_area": "NW1",
+    "short_description": "Compact but modern studio in a great location.",
+    "long_description": "Affordable, close to university and transport.",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200",
+      "https://images.unsplash.com/photo-1484154218963-1f2d3e4c5b6a?w=1200",
+      "https://images.unsplash.com/photo-1484154218964-6b7c8d9e0f1a?w=1200",
+      "https://images.unsplash.com/photo-1484154218965-3b4c5d6e7f8a?w=1200",
+      "https://images.unsplash.com/photo-1484154218966-9a8b7c6d5e4f?w=1200",
+      "https://images.unsplash.com/photo-1484154218967-0a1b2c3d4e5f?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "NW1 2XY"
+  },
+  {
+    "id": "p5",
+    "title": "Luxury 2-bed penthouse",
+    "type": "flat",
+    "price": 875000,
+    "bedrooms": 2,
+    "date_added": "2025-11-01",
+    "postcode_area": "SW1",
+    "short_description": "Exclusive penthouse with skyline views.",
+    "long_description": "High-end finishes, private terrace, concierge service.",
+    "images": [
+      "https://images.unsplash.com/photo-1505691723518-36a4f3b8b3b6?w=1200",
+      "https://images.unsplash.com/photo-1505691723519-4b5c6d7e8f9a?w=1200",
+      "https://images.unsplash.com/photo-1505691723520-1a2b3c4d5e6b?w=1200",
+      "https://images.unsplash.com/photo-1505691723521-8b9c0d1e2f3a?w=1200",
+      "https://images.unsplash.com/photo-1505691723522-6e7f8a9b0c1d?w=1200",
+      "https://images.unsplash.com/photo-1505691723523-2c3b4a5d6e7f?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "SW1 3AA"
+  },
+  {
+    "id": "p6",
+    "title": "Terraced 2-bed with courtyard",
+    "type": "house",
+    "price": 320000,
+    "bedrooms": 2,
+    "date_added": "2025-07-25",
+    "postcode_area": "BR1",
+    "short_description": "Cozy terraced house, recent renovation.",
+    "long_description": "Two bedrooms, modern kitchen and small courtyard garden.",
+    "images": [
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200",
+      "https://images.unsplash.com/photo-1494526585096-1f2d3e4b5c6d?w=1200",
+      "https://images.unsplash.com/photo-1494526585097-6a7b8c9d0e1f?w=1200",
+      "https://images.unsplash.com/photo-1494526585098-3e4f5a6b7c8d?w=1200",
+      "https://images.unsplash.com/photo-1494526585099-9b8a7c6d5e4f?w=1200",
+      "https://images.unsplash.com/photo-1494526585100-0a1b2c3d4e5a?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "BR1 2BB"
+  },
+  {
+    "id": "p7",
+    "title": "Detached 5-bed family home",
+    "type": "house",
+    "price": 895000,
+    "bedrooms": 5,
+    "date_added": "2025-06-18",
+    "postcode_area": "SW1",
+    "short_description": "Large detached house with drive and garden.",
+    "long_description": "Five bedrooms, three bathrooms, spacious reception rooms and garage.",
+    "images": [
+      "https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?w=1200",
+      "https://images.unsplash.com/photo-1425321395723-2a3b4c5d6e7f?w=1200",
+      "https://images.unsplash.com/photo-1425321395724-8b9c0d1e2f3a?w=1200",
+      "https://images.unsplash.com/photo-1425321395725-4f5e6d7c8b9a?w=1200",
+      "https://images.unsplash.com/photo-1425321395726-6e7f8a9b0c1d?w=1200",
+      "https://images.unsplash.com/photo-1425321395727-3c2b1a0f9e8d?w=1200"
+    ],
+    "floorplan": "Floorplan image or HTML here",
+    "location": "SW1 5CC"
+  }
+]
