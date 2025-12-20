@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import propertiesData from './data/properties.json';
+import SearchForm from './components/SearchForm';
+import ResultsGrid from './components/ResultsGrid';
+import PropertyPage from './components/PropertyPage';
+import FavouritesPanel from './components/FavouritesPanel';
+import Header from './components/Header';
+import './styles/main.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [properties] = useState(propertiesData);
+  const [results, setResults] = useState(propertiesData);
+  const [favourites, setFavourites] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('favourites')) || [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('favourites', JSON.stringify(favourites));
+  }, [favourites]);
+
+  const addFavourite = (property) => {
+    if (!favourites.find(p => p.id === property.id)) {
+      setFavourites(prev => [...prev, property]);
+    }
+  };
+  const removeFavourite = (id) => setFavourites(prev => prev.filter(p => p.id !== id));
+  const clearFavourites = () => setFavourites([]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <Header />
+      <div className="container">
+        <FavouritesPanel favourites={favourites} removeFavourite={removeFavourite} clearFavourites={clearFavourites}/>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <SearchForm properties={properties} setResults={setResults}/>
+              <ResultsGrid results={results} addFavourite={addFavourite}/>
+            </>
+          } />
+          <Route path="/property/:id" element={<PropertyPage properties={properties} addFavourite={addFavourite}/>} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
