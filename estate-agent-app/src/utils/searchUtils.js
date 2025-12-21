@@ -1,31 +1,84 @@
-// src/utils/searchUtils.js
-export function matchesCriteria(property, criteria) {
-
-  // criteria: { type, minPrice, maxPrice, minBeds, maxBeds, dateFrom, dateTo, postcode }
-  
-  if (criteria.type && criteria.type !== 'any' && property.type !== criteria.type) return false;
-  if (criteria.minPrice != null && property.price < Number(criteria.minPrice)) return false;
-  if (criteria.maxPrice != null && property.price > Number(criteria.maxPrice)) return false;
-  if (criteria.minBeds != null && property.bedrooms < Number(criteria.minBeds)) return false;
-  if (criteria.maxBeds != null && property.bedrooms > Number(criteria.maxBeds)) return false;
-  if (criteria.postcode && criteria.postcode.trim() !== '') {
-    // compare first part (case-insensitive)
-    const area = property.postcode_area ? property.postcode_area.toLowerCase() : property.location.split(' ')[0].toLowerCase();
-    if (!area.startsWith(criteria.postcode.trim().toLowerCase())) return false;
-  }
-  if (criteria.dateFrom) {
-    const pDate = new Date(property.date_added);
-    const from = new Date(criteria.dateFrom);
-    if (pDate < from) return false;
-  }
-  if (criteria.dateTo) {
-    const pDate = new Date(property.date_added);
-    const to = new Date(criteria.dateTo);
-    if (pDate > to) return false;
-  }
-  return true;
-}
-
+/**
+ * Filters properties based on search criteria
+ * @param {Array} properties - array of property objects
+ * @param {Object} criteria - search criteria
+ * @returns {Array} filtered properties
+ */
 export function filterProperties(properties, criteria) {
-  return properties.filter(p => matchesCriteria(p, criteria));
+  return properties.filter(property => {
+
+    // 1️⃣ Property type (House / Flat / Bungalow / Any)
+    if (
+      criteria.type &&
+      criteria.type !== 'any' &&
+      property.type.toLowerCase() !== criteria.type.toLowerCase()
+    ) {
+      return false;
+    }
+
+    // 2️⃣ Minimum bedrooms
+    if (
+      criteria.minBeds !== null &&
+      property.bedrooms < criteria.minBeds
+    ) {
+      return false;
+    }
+
+    // 3️⃣ Maximum bedrooms
+    if (
+      criteria.maxBeds !== null &&
+      property.bedrooms > criteria.maxBeds
+    ) {
+      return false;
+    }
+
+    // 4️⃣ Minimum price
+    if (
+      criteria.minPrice !== null &&
+      property.price < criteria.minPrice
+    ) {
+      return false;
+    }
+
+    // 5️⃣ Maximum price
+    if (
+      criteria.maxPrice !== null &&
+      property.price > criteria.maxPrice
+    ) {
+      return false;
+    }
+
+    // 6️⃣ Date added (FROM)
+    if (criteria.dateFrom) {
+      const propertyDate = new Date(
+        `${property.added.month} ${property.added.day}, ${property.added.year}`
+      );
+
+      if (propertyDate < new Date(criteria.dateFrom)) {
+        return false;
+      }
+    }
+
+    // 7️⃣ Date added (TO)
+    if (criteria.dateTo) {
+      const propertyDate = new Date(
+        `${property.added.month} ${property.added.day}, ${property.added.year}`
+      );
+
+      if (propertyDate > new Date(criteria.dateTo)) {
+        return false;
+      }
+    }
+
+    // 8️⃣ Location / postcode search (partial match)
+    if (
+      criteria.location &&
+      !property.location.toLowerCase().includes(criteria.location.toLowerCase())
+    ) {
+      return false;
+    }
+
+    // If all checks pass, include property
+    return true;
+  });
 }

@@ -9,8 +9,8 @@ import Header from './components/Header';
 import './styles/main.css';
 
 function App() {
-  const [properties] = useState(propertiesData);
-  const [results, setResults] = useState(propertiesData);
+  const [properties] = useState(propertiesData.properties);
+  const [results, setResults] = useState(propertiesData.properties);
   const [favourites, setFavourites] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem('favourites')) || [];
