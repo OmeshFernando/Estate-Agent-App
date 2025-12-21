@@ -6,7 +6,7 @@ import ResultsGrid from './components/ResultsGrid';
 import PropertyPage from './components/PropertyPage';
 import FavouritesPanel from './components/FavouritesPanel';
 import Header from './components/Header';
-import '../styles/main.css';
+import './styles/main.css';
 
 function App() {
   const [properties] = useState(propertiesData);
