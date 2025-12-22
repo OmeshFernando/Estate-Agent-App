@@ -2,10 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function PropertyCard({ property, addFavourite }) {
-  const thumb = property.images?.[0];
+  const thumb = property.picture;
   return (
-    <article className="property-card" draggable="true" onDragStart={(e)=>{ e.dataTransfer.setData('text/plain', property.id); }}>
-      <img src={thumb} alt={property.title} className="thumb"/>
+    <article className="property-card" 
+    draggable="true" 
+    onDragStart={(e)=>{ 
+      e.dataTransfer.setData('text/plain', property.id); 
+      }}
+      >
+        <Link to={`/property/${property.id}`} className="card-link">
+        <img src={thumb} alt={property.type} className="thumb" />
+        </Link>
       <div className="card-body">
         <h3><Link to={`/property/${property.id}`}>{property.title}</Link></h3>
 
