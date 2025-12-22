@@ -8,13 +8,23 @@
 			"tenure":"Freehold",
 			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
 			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
-			"picture":"images/prop1pic1small.jpg",
+			"picture":"/Images/property1/0.jpeg",
 			"url":"properties/prop1.html",
             "added": {
                 "month":"October",
                 "day":12,
                 "year":2022
-            }
+            },
+            "images": [
+                "/Images/property1/1.jpeg",
+                "/Images/property1/2.jpeg",
+                "/Images/property1/3.jpeg",
+                "/Images/property1/4.jpeg",
+                "/Images/property1/5.jpeg",
+                "/Images/property1/6.jpeg",
+                "/Images/property1/7.jpeg",
+                "/Images/property1/8.jpeg"
+            ]
         },
 		{
             "id":"prop2",
@@ -24,13 +34,23 @@
 			"tenure":"Freehold",
 			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
 			"location":"Crofton Road Orpington BR6",
-			"picture":"images/prop2pic1small.jpg",
+			"picture":"/Images/property2/0.jpeg",
 			"url":"properties/prop2.html",
             "added": {
                 "month":"September",
                 "day":14,
                 "year":2022
-            }
+            },
+             "images": [
+                "/Images/property2/1.jpeg",
+                "/Images/property2/2.jpeg",
+                "/Images/property2/3.jpeg",
+                "/Images/property2/4.jpeg",
+                "/Images/property2/5.jpeg",
+                "/Images/property2/6.jpeg",
+                "/Images/property2/7.jpeg",
+                "/Images/property2/8.jpeg"
+            ]
         },
         {
             "id": "prop3",
@@ -40,13 +60,23 @@
             "tenure": "Freehold",
             "description": "Spacious four bedroom detached family home located on a quiet residential road close to excellent local schools and transport links. The property offers a generous living space including a large lounge, separate dining room and a modern fitted kitchen. Upstairs comprises four well-proportioned bedrooms including a master with en-suite, and a contemporary family bathroom. Further benefits include a private rear garden, off-street parking and a garage.",
             "location": "Chislehurst Road, Orpington BR6",
-            "picture": "images/prop3pic1small.jpg",
+            "picture": "/Images/property3/0.jpeg",
             "url": "properties/prop3.html",
             "added": {
                 "month": "November",
                 "day": 3,
                 "year": 2022
-            }
+            },
+             "images": [
+                "/Images/property3/1.jpeg",
+                "/Images/property3/2.jpeg",
+                "/Images/property3/3.jpeg",
+                "/Images/property3/4.jpeg",
+                "/Images/property3/5.jpeg",
+                "/Images/property3/6.jpeg",
+                "/Images/property3/7.jpeg",
+                "/Images/property3/8.jpeg"
+            ]
         },
         {
             "id": "prop4",
@@ -56,13 +86,23 @@
             "tenure": "Leasehold",
             "description": "Well presented one bedroom first floor apartment ideally located within walking distance of Bromley South station. The accommodation comprises a bright living room, fitted kitchen, double bedroom and a modern bathroom suite. The property benefits from double glazing, secure entry system and allocated parking, making it an ideal first time purchase or investment opportunity.",
             "location": "High Street, Bromley BR1",
-            "picture": "images/prop4pic1small.jpg",
+            "picture": "/Images/property4/0.jpeg",
             "url": "properties/prop4.html",
             "added": {
                 "month": "August",
                 "day": 21,
                 "year": 2022
-            }
+            },
+             "images": [
+                "/Images/property4/1.jpeg",
+                "/Images/property4/2.jpeg",
+                "/Images/property4/3.jpeg",
+                "/Images/property4/4.jpeg",
+                "/Images/property4/5.jpeg",
+                "/Images/property4/6.jpeg",
+                "/Images/property4/7.jpeg",
+                "/Images/property4/8.jpeg"
+            ]
         },
         {
             "id": "prop5",
@@ -72,13 +112,22 @@
             "tenure": "Freehold",
             "description": "Rarely available three bedroom detached bungalow situated on a generous plot in a sought-after residential area. The property offers flexible accommodation including a spacious living room, modern kitchen, three bedrooms and a family bathroom. Externally there is a large rear garden, driveway parking and a detached garage. Offered to the market with no onward chain.",
             "location": "Links Way, Orpington BR6",
-            "picture": "images/prop5pic1small.jpg",
+            "picture": "/Images/property5/0.jpeg",
             "url": "properties/prop5.html",
             "added": {
                 "month": "July",
                 "day": 9,
                 "year": 2022
-            }
+            }, "images": [
+                "/Images/property5/1.jpeg",
+                "/Images/property5/2.jpeg",
+                "/Images/property5/3.jpeg",
+                "/Images/property5/4.jpeg",
+                "/Images/property5/5.jpeg",
+                "/Images/property5/6.jpeg",
+                "/Images/property5/7.jpeg",
+                "/Images/property5/8.jpeg"
+            ]
         },
         {
             "id": "prop6",
@@ -88,13 +137,23 @@
             "tenure": "Freehold",
             "description": "Impressive five bedroom period property offering extensive living accommodation across three floors. The property retains many original features while benefiting from modern upgrades throughout. Accommodation includes multiple reception rooms, a large kitchen/diner, five bedrooms and three bathrooms. The property further benefits from a landscaped garden and excellent access to local amenities and transport links.",
             "location": "Farnborough Hill, Orpington BR6",
-            "picture": "images/prop6pic1small.jpg",
+            "picture": "/Images/property6/0.jpeg",
             "url": "properties/prop6.html",
             "added": {
                 "month": "June",
                 "day": 18,
                 "year": 2022
-            }
+            },
+             "images": [
+                "/Images/property6/1.jpeg",
+                "/Images/property6/2.jpeg",
+                "/Images/property6/3.jpeg",
+                "/Images/property6/4.jpeg",
+                "/Images/property6/5.jpeg",
+                "/Images/property6/6.jpeg",
+                "/Images/property6/7.jpeg",
+                "/Images/property6/8.jpeg"
+            ]
         },
         {
             "id": "prop7",
@@ -104,13 +163,23 @@
             "tenure": "Leasehold",
             "description": "Modern two bedroom apartment situated within a popular development close to local shops and public transport. The accommodation comprises an open plan living/kitchen area, two bedrooms and a stylish bathroom. Additional features include a private balcony, lift access and secure allocated parking.",
             "location": "Station Approach, Orpington BR5",
-            "picture": "images/prop7pic1small.jpg",
+            "picture": "/Images/property7/0.jpeg",
             "url": "properties/prop7.html",
             "added": {
                 "month": "May",
                 "day": 2,
                 "year": 2022
-            }
+            },
+             "images": [
+                "/Images/property7/1.jpeg",
+                "/Images/property7/2.jpeg",
+                "/Images/property7/3.jpeg",
+                "/Images/property7/4.jpeg",
+                "/Images/property7/5.jpeg",
+                "/Images/property7/6.jpeg",
+                "/Images/property7/7.jpeg",
+                "/Images/property7/8.jpeg"
+            ]
         }
 ]
 }
