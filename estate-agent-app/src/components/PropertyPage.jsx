@@ -23,7 +23,7 @@ export default function PropertyPage({ properties, addFavourite }) {
       </p>
 
       {/* Gallery uses picture as single image */}
-      <Gallery images={[property.picture]} />
+      <Gallery images={property.images} />
 
       {/* Tabs component (Description / Map etc.) */}
       <TabsSection property={property} />
