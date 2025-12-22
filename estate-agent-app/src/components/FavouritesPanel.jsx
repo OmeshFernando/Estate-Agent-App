@@ -12,7 +12,7 @@ export default function FavouritesPanel({ favourites, removeFavourite, clearFavo
   function onDragOver(e) { e.preventDefault(); }
 
   return (
-    <aside className="favourites" onDrop={onDrop} onDragOver={onDragOver}>
+    <aside className="favourites-panel" onDrop={onDrop} onDragOver={onDragOver}>
       <h2>Favourites ({favourites.length})</h2>
       <ul>
         {favourites.map(f => (
