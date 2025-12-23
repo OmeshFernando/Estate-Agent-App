@@ -48,6 +48,7 @@ export default function SearchForm({ properties, setResults }) {
             <option value="any">Any</option>
             <option value="house">House</option>
             <option value="flat">Flat</option>
+            <option value="bungalow">Bungalow</option>
           </select>
         </label>
 
