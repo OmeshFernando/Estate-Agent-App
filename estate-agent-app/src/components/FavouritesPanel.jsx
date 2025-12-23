@@ -17,9 +17,9 @@ export default function FavouritesPanel({ favourites, removeFavourite, clearFavo
       <ul>
         {favourites.map(f => (
           <li key={f.id}>
-            <img src={f.images?.[0]} alt={f.title} />
-            <div>
-              <strong>{f.title}</strong>
+            <img src={f.images?.[0]} alt={f.type} />
+            <div  className="fav-info">
+              <strong>{f.type} – {f.bedrooms} Bed</strong>
               <button onClick={()=>removeFavourite(f.id)}>Remove</button>
             </div>
           </li>
