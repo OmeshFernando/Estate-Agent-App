@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function PropertyCard({ property, addFavourite }) {
-  const thumb = property.picture;
+  const thumb = property.images[0];
   return (
     <article className="property-card" 
     draggable="true" 

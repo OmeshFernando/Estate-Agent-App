@@ -39,7 +39,7 @@ export default function TabsSection({ property }) {
 
         {activeTab === 'floorplan' && (
           <img
-            src={property.floorPlan}
+            src={property.picture}
             alt="Floor plan"
             className="floorplan-image"
           />
@@ -52,7 +52,7 @@ export default function TabsSection({ property }) {
             height="300"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://maps.google.com/maps?q=${property.latitude},${property.longitude}&z=15&output=embed`}
+            src={`https://maps.google.com/maps?q=${property.location}&z=15&output=embed`}
           />
         )}
 
