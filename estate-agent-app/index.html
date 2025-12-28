@@ -1,7 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- Content Security Policy -->
+    <meta charset="UTF-8"
+    http-equiv="Content-Security-Policy"
+    content="
+    default-src 'self';
+    img-src 'self' data:;
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    connect-src 'self';
+    frame-src https://www.google.com;
+  "
+    />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>estate-agent-app</title>
