@@ -5,12 +5,18 @@ export default function PropertyCard({ property, addFavourite }) {
   const thumb = property.images[0];
   return (
     <article className="property-card" 
-    draggable="true" 
+    draggable 
     onDragStart={(e)=>{ 
-      e.dataTransfer.setData('text/plain', property.id); 
+      e.dataTransfer.setData('propertyId', property.id); 
+      e.dataTransfer.effectAllowed = 'move';
       }}
       >
-        <Link to={`/property/${property.id}`} className="card-link">
+         {/* Disable drag inside the link */}
+        <Link
+         to={`/property/${property.id}`} 
+         className="card-link"
+         draggable={false}
+         >
         <img src={thumb} alt={property.type} className="thumb" />
 
         <div className="card-body">
@@ -28,7 +34,7 @@ export default function PropertyCard({ property, addFavourite }) {
 
         <div className="card-actions">
         <button onClick={() => addFavourite(property)}>
-          ♥ Favourite
+          ♥ 
         </button>
         
       </div>

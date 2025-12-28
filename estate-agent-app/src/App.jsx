@@ -28,14 +28,29 @@ function App() {
       setFavourites(prev => [...prev, property]);
     }
   };
-  const removeFavourite = (id) => setFavourites(prev => prev.filter(p => p.id !== id));
+
+  const onDropAdd = (id) => {
+  const property = properties.find(p => p.id === id);
+  if (!property) return;
+
+  if (!favourites.find(p => p.id === id)) {
+    setFavourites(prev => [...prev, property]);
+  }
+};
+  const removeFavourite = (id) => 
+    setFavourites(prev => prev.filter(p => p.id !== id));
   const clearFavourites = () => setFavourites([]);
 
   return (
     <BrowserRouter>
       <Header />
       <div className="container">
-        <FavouritesPanel favourites={favourites} removeFavourite={removeFavourite} clearFavourites={clearFavourites}/>
+        <FavouritesPanel 
+        favourites={favourites} 
+        onDropAdd={onDropAdd} 
+        removeFavourite={removeFavourite} 
+        clearFavourites={clearFavourites}
+        />
         <Routes>
           <Route path="/" element={
             <>
