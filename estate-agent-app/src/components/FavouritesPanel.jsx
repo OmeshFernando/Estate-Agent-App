@@ -32,7 +32,14 @@ export default function FavouritesPanel({
             draggable
             onDragStart={(e) => {
               e.dataTransfer.setData('propertyId', f.id);
+              e.dataTransfer.effectAllowed = 'move';
             }}
+            onDragEnd={(e) => {
+              // If dropEffect is "none", it was dropped outside
+              if (e.dataTransfer.dropEffect === 'none') {
+                removeFavourite(f.id);
+              }
+          }}     
           >
             <img src={f.images[0]} alt={f.type} />
             <div className="fav-info">
