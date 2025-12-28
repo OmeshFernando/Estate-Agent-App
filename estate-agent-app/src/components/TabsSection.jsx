@@ -52,7 +52,7 @@ export default function TabsSection({ property }) {
             height="300"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://maps.google.com/maps?q=${property.location}&z=15&output=embed`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(property.location)}&z=15&output=embed`}
           />
         )}
 
