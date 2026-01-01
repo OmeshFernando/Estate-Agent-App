@@ -331,6 +331,20 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Footer */
+.site-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 40px;
+}
+
+.site-footer .copyright {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

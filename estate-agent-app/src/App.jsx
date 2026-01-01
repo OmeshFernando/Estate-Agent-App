@@ -6,6 +6,7 @@ import ResultsGrid from './components/ResultsGrid';
 import PropertyPage from './components/PropertyPage';
 import FavouritesPanel from './components/FavouritesPanel';
 import Header from './components/Header';
+import Footer from "./components/Footer";
 import './styles/main.css';
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
           <Route path="/property/:id" element={<PropertyPage properties={properties} addFavourite={addFavourite}/>} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
