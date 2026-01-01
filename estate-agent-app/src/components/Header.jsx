@@ -7,9 +7,14 @@ export default function Header() {
       <div className="header-inner">
 
         {/* Site logo / title */}
-        <h1 className="logo">
-          <Link to="/">RightMove Clone</Link>
-        </h1>
+        <div className="brand">
+          <h1 className="logo">
+            <Link to="/">TrustHome</Link>
+          </h1>
+          <h3 className="sub-topic">
+            A trusted roof makes a peaceful life.
+          </h3>
+        </div>
 
         {/* Simple navigation */}
         <nav className="main-nav">
