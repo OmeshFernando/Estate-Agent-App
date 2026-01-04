@@ -1,16 +1,75 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# TrustHome - Estate Agent App
 
-Currently, two official plugins are available:
+**🚀 Live Demo:** [View Deployed Application](https://omeshfernando-estate-agent-app.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, high-performance property search application built with **React** and **Vite**. **TrustHome** provides a seamless user experience for browsing real estate listings, viewing detailed property data, and managing a personalized favorites list.
 
-## React Compiler
+## Key Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+* **Advanced Search & Filter:** Dynamic filtering system to find properties by type, price range, bedroom count, date added, and postcode area.
+* **Property Gallery:** Interactive image gallery on property pages with thumbnail navigation and full-screen views.
+* **Tabbed Information:** Organized property details using a tabbed interface for Descriptions, Floor Plans, and Maps.
+* **Favourites Management:** A dedicated sidebar to save properties of interest, persisted via **Local Storage**.
+* **Fully Responsive:** Custom-engineered CSS for a flawless experience across mobile, tablet, and desktop screens.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React (Vite)
+* **State Management:** React Hooks (`useState`, `useEffect`)
+* **Date Handling:** `react-datepicker`
+* **Styling:** Pure CSS (Flexbox & Grid) with a focus on custom properties (variables) for theme consistency.
+* **Utilities:** Custom search and filter logic located in `src/utils`.
+
+## Project Structure
+
+```text
+estate-agent-app/
+├── public/              # Static assets (JSON data, property images)
+├── src/
+│   ├── assets/          # SVG icons and logos
+│   ├── components/      # UI components (SearchForm, PropertyCard, Favourites, etc.)
+│   ├── data/            # Local data storage/JSON files
+│   ├── styles/          # Global and component-specific CSS files
+│   ├── utils/           # Helper functions for search filtering and date formatting
+│   ├── App.jsx          # Main application logic and routing
+│   ├── main.jsx         # Entry point
+│   └── setupTests.js    # Testing configuration
+├── index.html           # HTML template
+├── vite.config.js       # Vite build setup
+└── package.json         # Scripts and dependencies
+
+```
+
+## Installation & Setup
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/OmeshFernando/Estate-Agent-App.git
+cd estate-agent-app
+
+```
+
+
+2. **Install dependencies**
+```bash
+npm install
+
+```
+
+
+3. **Start the development server**
+```bash
+npm run dev
+
+```
+
+
+Access the app at `http://localhost:5173`.
+4. **Build for production**
+```bash
+npm run build
+
+```
+
+
