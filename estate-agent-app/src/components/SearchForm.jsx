@@ -77,7 +77,7 @@ export default function SearchForm({ properties, setResults }) {
           <DatePicker selected={dateTo} onChange={date=>setDateTo(date)} dateFormat="yyyy-MM-dd" isClearable/>
         </label>
         <label>Postcode area
-          <input value={postcode} onChange={e=>setPostcode(e.target.value)} placeholder="e.g. NW1"/>
+          <input value={postcode} onChange={e=>setPostcode(e.target.value)} placeholder="e.g. BR1,BR2"/>
         </label>
       </div>
 

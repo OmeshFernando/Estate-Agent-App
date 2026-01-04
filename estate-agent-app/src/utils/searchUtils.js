@@ -7,7 +7,7 @@
 export function filterProperties(properties, criteria) {
   return properties.filter(property => {
 
-    // 1️⃣ Property type (House / Flat / Bungalow / Any)
+    // Property type (House / Flat / Bungalow / Any)
     if (
       criteria.type &&
       criteria.type !== 'any' &&
@@ -16,7 +16,7 @@ export function filterProperties(properties, criteria) {
       return false;
     }
 
-    // 2️⃣ Minimum bedrooms
+    // Minimum bedrooms
     if (
       criteria.minBeds !== null &&
       property.bedrooms < criteria.minBeds
@@ -24,7 +24,7 @@ export function filterProperties(properties, criteria) {
       return false;
     }
 
-    // 3️⃣ Maximum bedrooms
+    // Maximum bedrooms
     if (
       criteria.maxBeds !== null &&
       property.bedrooms > criteria.maxBeds
@@ -32,7 +32,7 @@ export function filterProperties(properties, criteria) {
       return false;
     }
 
-    // 4️⃣ Minimum price
+    // Minimum price
     if (
       criteria.minPrice !== null &&
       property.price < criteria.minPrice
@@ -40,7 +40,7 @@ export function filterProperties(properties, criteria) {
       return false;
     }
 
-    // 5️⃣ Maximum price
+    // Maximum price
     if (
       criteria.maxPrice !== null &&
       property.price > criteria.maxPrice
@@ -48,7 +48,7 @@ export function filterProperties(properties, criteria) {
       return false;
     }
 
-    // 6️⃣ Date added (FROM)
+    // Date added (FROM)
     if (criteria.dateFrom) {
       const propertyDate = new Date(
         `${property.added.month} ${property.added.day}, ${property.added.year}`
@@ -59,7 +59,7 @@ export function filterProperties(properties, criteria) {
       }
     }
 
-    // 7️⃣ Date added (TO)
+    // Date added (TO)
     if (criteria.dateTo) {
       const propertyDate = new Date(
         `${property.added.month} ${property.added.day}, ${property.added.year}`
@@ -70,13 +70,9 @@ export function filterProperties(properties, criteria) {
       }
     }
 
-    // 8️⃣ Location / postcode search (partial match)
-    if (
-      criteria.location &&
-      !property.location.toLowerCase().includes(criteria.location.toLowerCase())
-    ) {
+    // Location / postcode search (partial match)
+    if (criteria.postcode && !property.location.toLowerCase().includes(criteria.postcode.toLowerCase())) 
       return false;
-    }
 
     // If all checks pass, include property
     return true;
