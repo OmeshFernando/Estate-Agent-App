@@ -17,6 +17,9 @@ export default function PropertyPage({ properties, addFavourite }) {
       <h1>
         {property.type} – {property.bedrooms} Bedroom
       </h1>
+      <h2>
+        {property.location} 
+      </h2>
 
       <p className="price">
         £{property.price.toLocaleString()}

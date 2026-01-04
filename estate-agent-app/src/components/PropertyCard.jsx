@@ -21,6 +21,7 @@ export default function PropertyCard({ property, addFavourite }) {
 
         <div className="card-body">
           <h3>{property.type} – {property.bedrooms} Bed</h3>
+          <h3>{property.location}</h3>
 
           <p className="price">
             £{property.price.toLocaleString()}
