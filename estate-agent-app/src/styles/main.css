@@ -182,14 +182,6 @@ body {
   color: var(--accent);
   margin: 6px 0;
 }
-/* .property-card .card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-left: 1px solid #eee;
-  background: #fafafa;
-} */
 .property-card button {
   background: var(--secondary);
   border: none;
@@ -252,16 +244,20 @@ body {
 }
 
 /* Gallery */
-.gallery .main-image img { 
-  width:100%; 
-  height:420px; 
-  object-fit:cover; 
+.gallery .main-image img {
+  max-width: 100%;    /* Never wider than the screen */
+  width: 100%;        /* Stretch to fill container */
+  height: auto;       /* Maintain aspect ratio */
+  object-fit: cover;  /* Prevents stretching/distortion */
+  display: block;     /* Removes weird bottom gaps */ 
   border-radius:10px; 
 }
 .gallery .thumbs { 
   display:flex; 
   gap:10px; 
-  margin-top:10px; 
+  margin-top:10px;
+  flex-wrap: wrap;    /* Allows thumbs to drop to next line instead of pushing wide */ 
+  max-width: 100%;
 }
 .gallery .thumbs img { 
   width:90px; 
@@ -293,6 +289,15 @@ body {
 }
 .tab-content {
   margin-top: 14px;
+  width: 100%;
+  overflow-x: hidden; /* Prevents the whole page from shaking/sliding */
+}
+/* Make the Floor Plan Image responsive */
+.tab-content img {
+  max-width: 100%; /* Image can't be wider than its parent */
+  height: auto;    /* Keeps the proportions perfect so it's not squashed */
+  display: block;
+  margin: 0 auto;  /* Centers the floor plan */
 }
 
 /* Header*/
@@ -300,6 +305,7 @@ body {
   background: var(--primary);
   color: white;
   padding: 1rem 0;
+  width: 100%;
 }
 .header-inner {
   max-width: var(--max-width);
@@ -308,6 +314,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .brand {
   display: flex;
@@ -338,6 +346,9 @@ body {
   text-align: center;
   padding: 12px 0;
   margin-top: 40px;
+  width: 100%;
+  display: block; /* Ensures they don't behave like grid items */
+  box-sizing: border-box;
 }
 
 .site-footer .copyright {
@@ -345,34 +356,106 @@ body {
   opacity: 0.85;
 }
 
+/* --- RESPONSIVE STYLES --- */
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
-  .gallery .main-image img {
-    height: 260px;
-  }
-
-  .favourites-panel {
-    height: auto;
-    order: 2;
-  }
-}
-
-@media (max-width: 768px) {
+/* Tablet and Mobile (Screens smaller than 900px) */
+@media (max-width: 900px) {
   .property-card {
-    flex-direction: column;
+    /* Stacks the property image on top of the text */
+    flex-direction: column; 
   }
 
   .property-card img.thumb {
-    width: 100%;
-    height: 220px;
+    width: 100%; /* Image takes full width of the card */
+    height: 200px;
+  }
+
+  .card-link {
+    flex-direction: column;
   }
 }
 
+/* Small Mobile (Screens smaller than 600px) */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .gallery .main-image img {
+    height: 250px; /* Smaller gallery image for phones */
+  }
+
+  .tab-buttons {
+    flex-wrap: wrap; /* Allows buttons to wrap to next line if they don't fit */
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: flex; /* Switch from grid to flex for easier stacking */
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .favourites-panel {
+    width: 100%; /* Make sidebar full width on top */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  /* FIX THE GALLERY THUMBNAILS */
+  .gallery .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  .gallery .thumbs img {
+    width: 100%; /* Let grid handle the size */
+    height: 60px;
+  }
+
+  /* FIX TAB BUTTONS (They look squashed in your image) */
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .tab-buttons button {
+    flex: 1; /* Buttons grow to fill width */
+    min-width: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* SPECIFIC MOBILE TWEAK (Below 600px) */
+@media (max-width: 600px) {
+  .gallery .main-image img {
+    height: 250px; /* Prevent the main image from being too tall on phones */
+  }
+  
+  .brand {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Mobile Tweak for Floor Plan Container */
+@media (max-width: 768px) {
+  .tab-content {
+    padding: 10px 0;
+  }
+  
+  /* If your floor plan is in a specific wrapper, make it flex */
+  .floor-plan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
