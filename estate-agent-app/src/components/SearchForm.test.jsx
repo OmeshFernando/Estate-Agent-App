@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchForm from './SearchForm';
+import FavouritesPanel from './FavouritesPanel';
 
-// 🔹 Mock filterProperties so we test SearchForm logic, not utils
+// Mock filterProperties so we test SearchForm logic, not utils
 jest.mock('../utils/searchUtils', () => ({
   filterProperties: jest.fn(() => [])
 }));
@@ -39,7 +40,7 @@ describe('SearchForm Component', () => {
       />
     );
 
-    expect(screen.getByPlaceholderText(/nw1/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/br1,br2/i)).toBeInTheDocument();
   });
 
   test('allows user to type postcode', async () => {
@@ -50,7 +51,7 @@ describe('SearchForm Component', () => {
       />
     );
 
-    const postcodeInput = screen.getByPlaceholderText(/nw1/i);
+    const postcodeInput = screen.getByPlaceholderText(/br1,br2/i);
     await userEvent.type(postcodeInput, 'SW1');
 
     expect(postcodeInput.value).toBe('SW1');
@@ -82,6 +83,78 @@ describe('SearchForm Component', () => {
     await userEvent.click(resetButton);
 
     expect(mockSetResults).toHaveBeenCalledWith(mockProperties);
+  });
+  test('submitting form with multiple filters calls filterProperties with correct criteria', async () => {
+  const { filterProperties } = require('../utils/searchUtils');
+  
+  render(<SearchForm properties={mockProperties} setResults={mockSetResults} />);
+
+  // Interact with multiple fields
+  await userEvent.selectOptions(screen.getByLabelText(/type/i), 'house');
+  await userEvent.type(screen.getByLabelText(/min price/i), '200000');
+  await userEvent.type(screen.getByLabelText(/min beds/i), '2');
+
+  const searchButton = screen.getByRole('button', { name: /search/i });
+  await userEvent.click(searchButton);
+
+  // Verify that filterProperties was called with the combined object
+  expect(filterProperties).toHaveBeenCalledWith(
+    mockProperties,
+    expect.objectContaining({
+      type: 'house',
+      minPrice: '200000',
+      minBeds: '2'
+    })
+  );
+});
+
+});
+describe('FavouritesPanel Component', () => {
+  const mockFavourites = [
+    {
+      id: "prop1",
+      type: 'Flat',
+      bedrooms: 2,
+      price: 345000,
+      images: ['flat1.jpg']
+    }
+  ];
+
+  // Create mock functions to track calls
+  const mockRemoveFavourite = jest.fn();
+  const mockClearFavourites = jest.fn();
+  const mockOnDropAdd = jest.fn();
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+test('calls removeFavourite when the Remove button is clicked', async () => {
+    render(
+      <FavouritesPanel 
+        favourites={mockFavourites} 
+        removeFavourite={mockRemoveFavourite} 
+      />
+    );
+
+    const removeBtn = screen.getByRole('button', { name: /remove/i });
+    await userEvent.click(removeBtn);
+
+    expect(mockRemoveFavourite).toHaveBeenCalledWith("prop1");
+  });
+
+  test('calls clearFavourites when the Clear button is clicked', async () => {
+    render(
+      <FavouritesPanel 
+        favourites={mockFavourites} 
+        clearFavourites={mockClearFavourites} 
+      />
+    );
+
+    const clearBtn = screen.getByRole('button', { name: /clear favourites/i });
+    await userEvent.click(clearBtn);
+
+    expect(mockClearFavourites).toHaveBeenCalled();
   });
 
 });
